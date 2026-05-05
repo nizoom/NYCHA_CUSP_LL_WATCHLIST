@@ -1,0 +1,29 @@
+
+files_in_order = [
+    # 311 complaints
+    "nycha_311_dashboard.html",
+
+    # PNA capital needs
+    "nycha_pna_1_totals.html",
+    "nycha_pna_2_top25.html",
+    "nycha_pna_3_worktypes.html",
+    "nycha_pna_4_changes.html",
+
+    # Demographics
+    "nycha_demo_1_race.html",
+    "nycha_demo_2_age.html",
+    "nycha_demo_3_borough.html",
+    "nycha_demo_4_household_type.html",
+
+    # Evictions
+    "nycha_evictions_1_monthly.html",
+    "nycha_evictions_2_comparison.html",
+]
+
+# Section labels — shown as dividers between groups of charts so the page has clear navigation when scrolling
+section_labels = {
+    "nycha_311_dashboard.html":       "311 Complaints at NYCHA Developments (2020–Present)",
+    "nycha_pna_1_totals.html":        "Physical Needs Assessment — Capital Needs (2023–2026)",
+    "nycha_demo_1_race.html":         "Resident Demographics (2025)",
+    "nycha_evictions_1_monthly.html": "Evictions by Borough (2024–2025)",
+}
