@@ -3,6 +3,10 @@ import { useState } from "react";
 const DashboardTabs = () => {
   const [activeTab, setActiveTab] = useState("311 Complaints");
 
+  const toggleTab = (tabName) => {
+    setActiveTab(tabName);
+  };
+
   const tabs = [
     "311 Complaints",
     "Public Needs Assessment",
@@ -15,11 +19,11 @@ const DashboardTabs = () => {
       {tabs.map((tab) => (
         <button
           key={tab}
-          onClick={() => setActiveTab(tab)}
+          onClick={() => toggleTab(tab)}
           className={
             activeTab === tab
-              ? "selected-tab dashboard-tab-btn"
-              : "unselected-tab dashboard-tab-btn"
+              ? "selected-dashboard-tab dashboard-tab-btn"
+              : "unselected-dashboard-tab dashboard-tab-btn"
           }
         >
           {tab}

@@ -95,10 +95,56 @@ h1 {
 
 .selected-tab {
   background-color: var(--color-gold);
+  pointer-events: none;
 }
 
 .dashboard-tabs-wrapper {
   padding: 50px;
   margin-left: 5%;
   display: flex;
+  gap: 15px; /* Tighter gap feels more like a tab group */
+}
+
+.dashboard-tab-btn {
+  /* Use Lexend and refine padding */
+  font-family: "Lexend", sans-serif;
+  font-weight: 400;
+  padding: 12px 24px;
+  border-radius: 8px 8px 0 0; /* Rounded top only for a 'Tab' look */
+  border: none;
+  font-size: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Smoother curve */
+  position: relative;
+  outline: none;
+  min-width: 160px;
+  text-align: center;
+}
+
+/* THE UNSELECTED STATE */
+.unselected-dashboard-tab {
+  background-color: rgba(26, 27, 65, 0.5); /* Semi-transparent Navy */
+  color: rgba(248, 250, 252, 0.7); /* Slightly faded white */
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+}
+
+.unselected-dashboard-tab:hover {
+  background-color: var(--color-navy-dark);
+  color: white;
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  border-bottom: 3px solid var(--color-blue-action);
+}
+
+/* THE SELECTED STATE */
+.selected-dashboard-tab {
+  background-color: var(--color-navy-dark);
+  color: var(--color-gold); /* Gold text instead of gold background */
+  /* font-weight: 600; */
+  border-bottom: 3px solid var(--color-gold); /* Gold indicator */
+}
+
+/* Subtle "Active" push down effect */
+.dashboard-tab-btn:active {
+  transform: translateY(-1px);
 }
