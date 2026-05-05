@@ -1,7 +1,7 @@
 import "./App.css";
 import { useState } from "react";
 import DashboardSection from "./dashboard-components/dashboard-section";
-
+import MapSection from "./map-components/map";
 function App() {
   const [tabState, setTabState] = useState("dashboard");
   const toggleTab = () => {
@@ -33,7 +33,7 @@ function App() {
           <h2> Map</h2>
         </button>
       </nav>
-      <DashboardSection />
+      {tabState === "dashboard" ? <DashboardSection /> : <MapSection />}
     </>
   );
 }
