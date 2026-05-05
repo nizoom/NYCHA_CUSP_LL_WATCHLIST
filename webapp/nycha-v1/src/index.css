@@ -152,3 +152,10 @@ h1 {
 .chart-container {
   text-align: center;
 }
+
+/* MAP SECTION */
+
+.map-wrapper h2 {
+  margin-left: 10%;
+  margin-top: 5%;
+}
