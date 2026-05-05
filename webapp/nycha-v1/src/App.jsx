@@ -1,6 +1,6 @@
 import "./App.css";
 import { useState } from "react";
-import DashboardTabs from "./dashboard-components/dashboard-tabs";
+import DashboardSection from "./dashboard-components/dashboard-section";
 
 function App() {
   const [tabState, setTabState] = useState("dashboard");
@@ -33,7 +33,7 @@ function App() {
           <h2> Map</h2>
         </button>
       </nav>
-      <DashboardTabs />
+      <DashboardSection />
     </>
   );
 }

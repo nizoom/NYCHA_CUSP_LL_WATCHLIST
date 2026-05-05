@@ -148,3 +148,7 @@ h1 {
 .dashboard-tab-btn:active {
   transform: translateY(-1px);
 }
+
+.chart-container {
+  text-align: center;
+}
