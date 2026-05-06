@@ -2,6 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import DashboardSection from "./dashboard-components/dashboard-section";
 import MapSection from "./map-components/map";
+import ViolationPanel from "./map-components/violation-panel";
 function App() {
   const [tabState, setTabState] = useState("dashboard");
   const toggleTab = () => {
@@ -11,6 +12,9 @@ function App() {
       setTabState("dashboard");
     }
   };
+  const [selectedVio, setSelectedVio] = useState(null);
+  const [vioType, setVioType] = useState(null); // 'hpd' or 'nycha'
+
   return (
     <>
       <section className="header">
@@ -33,7 +37,25 @@ function App() {
           <h2> Map</h2>
         </button>
       </nav>
-      {tabState === "dashboard" ? <DashboardSection /> : <MapSection />}
+      {tabState === "dashboard" ? (
+        <DashboardSection />
+      ) : (
+        <>
+          <MapSection
+            onVioClick={(id, type) => {
+              setSelectedVio(id);
+              setVioType(type);
+            }}
+          />
+          {selectedVio && (
+            <ViolationPanel
+              vioId={selectedVio}
+              vioType={vioType}
+              onClose={() => setSelectedVio(null)}
+            />
+          )}
+        </>
+      )}
     </>
   );
 }
