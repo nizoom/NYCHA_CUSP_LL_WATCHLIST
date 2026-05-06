@@ -1,6 +1,8 @@
 import { useEffect, useRef } from "react";
 import { Map } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
+import all_vio_ids from "../json/vios.json";
+import adds_w_vio_ids from "../json/adds_w_vio_ids.json";
 
 const MapSection = () => {
   const mapContainer = useRef(null);
